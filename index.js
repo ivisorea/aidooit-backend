@@ -3,13 +3,14 @@ import './db/mongoose.js';
 import express from 'express';
 import usersRouter from './routes/usersRouter.js';
 import errorHandler from './middleware/errorHandler.js';
+import postsRouter from './routes/postsRouter.js';
 
 const app = express();
 const port = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use('/user', usersRouter);
-// app.use('/post');
+app.use('/post', postsRouter);
 // app.use('/uploads');
 app.use('*', (req, res) => {res.send ('aidooit API');
 });
