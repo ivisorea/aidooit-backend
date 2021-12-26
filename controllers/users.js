@@ -32,10 +32,7 @@ export const singIn = asyncHandler(async (req, res, next) => {
       res.json({ token });
     });
 
-export const getMe = asyncHandler(async (req, res, next) => {
-    res.json(req.user);
+export const getMe = asyncHandler(async (req, res) => {
+  res.json(req.user);
     });
 
-export const logout = asyncHandler(async (req, res, next) => {
-
-    });

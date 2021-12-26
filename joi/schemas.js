@@ -6,5 +6,6 @@ export const post = Joi.object({
     'string.empty': 'Title cannot be empty',
     'string.null': 'Title cannot be empty'
   }),
-  body: Joi.string().min(100).required()
+  image: Joi.string().required(),
+  body: Joi.string().min(10).required()
 });
