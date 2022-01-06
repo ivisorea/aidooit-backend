@@ -2,11 +2,13 @@ import asyncHandler from "../middleware/asyncHandler.js";
 import ErrorResponse from "../utils/ErrorResponse.js";
 import Post from "../models/Post.js";
 
+//Get all posts
 export const getAllPosts = asyncHandler(async (req, res, next) => {
     const posts = await Post.find().populate('author')
     res.json(posts);
 });
 
+// Create post
 export const createPost = asyncHandler(async (req, res) => {
     const {
         body,
@@ -19,7 +21,7 @@ export const createPost = asyncHandler(async (req, res) => {
     res.status(201).json(newPost);
 });
 
-
+//Get Single Post
 export const getSinglePost = asyncHandler(async(req, res) => {
     const {
         params: { id }
@@ -29,6 +31,7 @@ export const getSinglePost = asyncHandler(async(req, res) => {
     res.json(post);
 });
 
+//Update Post
 export const updatePost = asyncHandler(async(req, res) => {
     const {
         user,
@@ -46,6 +49,7 @@ export const updatePost = asyncHandler(async(req, res) => {
     res.json(updatedPost);
 });
 
+//Delete Post
 export const deletePost = asyncHandler(async(req, res) => {
     const {
         user,
