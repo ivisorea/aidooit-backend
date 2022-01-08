@@ -33,12 +33,6 @@ export const getImageS3 = (req, res, next) => {
           Expires: 60 * 1,
         })
         console.log(url)
-        // console.log(url) // This works well and the image can be viewed in browser when copying the url
-        
-        // if (!url) return res.status(400).send("No image found..") 
-        // // How do I return the signed URL to the image in the client?
-        // return res.status(200).send(url)
-      
     } catch (err) {
       console.log(err)
     }

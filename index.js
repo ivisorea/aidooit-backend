@@ -7,6 +7,7 @@ import usersRouter from './routes/usersRouter.js';
 import errorHandler from './middleware/errorHandler.js';
 import postsRouter from './routes/postsRouter.js';
 import imagesUploadRouter from './routes/imagesUploadRouter.js';
+import categoriesRouter from './routes/categoriesRouter.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -19,6 +20,7 @@ app.use(express.static(publicDir));
 app.use(express.json());
 app.use('/user', usersRouter);
 app.use('/post', postsRouter);
+app.use('/categories', categoriesRouter)
 app.use('/imagesuploads', imagesUploadRouter);
 app.use('*', (req, res) => {res.send ('aidooit API');
 });
