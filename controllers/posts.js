@@ -4,7 +4,7 @@ import Post from "../models/Post.js";
 
 //Get all posts
 export const getAllPosts = asyncHandler(async (req, res, next) => {
-    const posts = await Post.find().populate('author')
+    const posts = await Post.find().populate('category', 'name').populate('author', 'first_name last_name');
     res.json(posts);
 });
 
