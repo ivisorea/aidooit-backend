@@ -9,7 +9,7 @@ const postSchema = new Schema({
     comments: [{ body: String, date: Date }],
     author: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
     date: { type: Date, default: Date.now },
-    to_sale: {type: Boolean, default: false},
+    category: {type: Schema.Types.ObjectId, required: true, ref: 'Category'},
 });
 
 export default model('Post', postSchema);
