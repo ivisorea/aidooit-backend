@@ -4,6 +4,11 @@ import asyncHandler from "../middleware/asyncHandler.js";
 import ErrorResponse from "../utils/ErrorResponse.js";
 import User from "../models/User.js";
 
+export const getAllUsers = asyncHandler(async (req, res, next) => {
+    const users = await User.find().populate('first_name');
+    res.json(users);
+});
+
 export const singUp = asyncHandler(async (req, res, next) => {
     const {
         body: { first_name, last_name, email, password }

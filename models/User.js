@@ -16,6 +16,7 @@ const userSchema = new Schema({
     country: {type: String, required: false},
     phone_number: {type: String, required: false},
     is_admin: {type: Boolean, default: false},
+    
 });
 
 export default model('User', userSchema);
