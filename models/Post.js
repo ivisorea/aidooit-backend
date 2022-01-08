@@ -9,7 +9,7 @@ const postSchema = new Schema({
     body: { type: String, required: true },
     comments: [{ body: String, date: Date }],
     author: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
-    category: {type: Schema.Types.ObjectId, required: true, ref: 'Category'},
+    category: { type: Schema.Types.ObjectId, required: true, ref: 'Category' },
     date: { type: Date, default: Date.now },
     
    
