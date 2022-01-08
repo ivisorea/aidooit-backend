@@ -3,6 +3,7 @@ import './db/mongoose.js';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import express from 'express';
+import cors from 'cors';
 import usersRouter from './routes/usersRouter.js';
 import errorHandler from './middleware/errorHandler.js';
 import postsRouter from './routes/postsRouter.js';
@@ -18,6 +19,7 @@ const port = process.env.PORT || 4000;
 
 app.use(express.static(publicDir));
 app.use(express.json());
+app.use(cors());
 app.use('/user', usersRouter);
 app.use('/post', postsRouter);
 app.use('/categories', categoriesRouter)
