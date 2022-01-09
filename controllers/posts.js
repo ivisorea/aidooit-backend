@@ -67,3 +67,25 @@ export const deletePost = asyncHandler(async(req, res) => {
     res.json({ success: `Post with id of ${id} deleted` });
 });
 
+//Get Posts by Category
+export const getPostsByCategory = asyncHandler(async(req, res) => {
+    console.log('aaa');
+    const {
+        params: { id}
+    } = req;
+    const posts = await Post.find({category: id}).populate('category', 'name');
+    if (!posts) throw new ErrorResponse(`Posts with category id of ${id} not found`, 404);
+    res.json(posts);
+}
+);
+
+//Get Posts by Author
+export const getPostsByAuthor = asyncHandler(async(req, res) => {
+    const {
+        params: { author }
+    } = req;
+    const posts = await Post.find({author: author}).populate('category', 'name');
+    if (!posts) throw new ErrorResponse(`Posts with author id of ${author} not found`, 404);
+    res.json(posts);
+}
+);
