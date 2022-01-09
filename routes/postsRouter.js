@@ -4,7 +4,9 @@ import {
     getAllPosts,
     getSinglePost,
     updatePost,
-    deletePost
+    deletePost,
+    getPostsByCategory,
+    getPostsByAuthor
 } from '../controllers/posts.js';
 import verifyToken from '../middleware/verifyToken.js';
 import validateJOI from '../middleware/validateJOI.js';
@@ -19,5 +21,9 @@ postsRouter
     .get(getSinglePost)
     .put(verifyToken, updatePost)
     .delete(verifyToken, deletePost)
+
+postsRouter.get('/category/:id', getPostsByCategory)
+postsRouter.get('/author/:id', getPostsByAuthor)
+    
 
 export default postsRouter
