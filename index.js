@@ -86,8 +86,8 @@ app.use('*', (req, res) => {res.send (
         </tr>
             <td><h4>Get Posts by Category -></h4></td>  
             <td><h4>GET -></h4></td>
-            <td><h4><a href='https://aidooit-app.herokuapp.com/category/:id'>
-            https://aidooit-app.herokuapp.com/category/:id</a></h4></td>
+            <td><h4><a href='https://aidooit-app.herokuapp.com/post/category/:id'>
+            https://aidooit-app.herokuapp.com/post/category/:id</a></h4></td>
         </tr>
         <tr>
             <td><h4>Upload Image to AWS -></h4></td>
