@@ -11,6 +11,7 @@ const postSchema = new Schema({
     author: { type: Schema.Types.ObjectId, required: true, ref: 'User' },
     category: { type: Schema.Types.ObjectId, required: true, ref: 'Category' },
     date: { type: Date, default: Date.now },
+    likes: [{ type: Schema.Types.ObjectId, required: true, ref: 'User' }],
     
    
 });
