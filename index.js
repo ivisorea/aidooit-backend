@@ -44,21 +44,21 @@ app.use('*', (req, res) => {res.send (
         <tr>
             <td><h4>SingIn User -></h4></td>
             <td><h4>POST -></h4></td>
-            <td><h4><a href='https://aidooit-app.herokuapp.com/singin'>
-            https://aidooit-app.herokuapp.com/singin</a></h4></td>
+            <td><h4><a href='https://aidooit-app.herokuapp.com/user/singin'>
+            https://aidooit-app.herokuapp.com/user/singin</a></h4></td>
             
         </tr>
         <tr>
             <td><h4>SingUp User -></h4></td>
             <td><h4>POST -></h4></td>
-            <td><h4><a href='https://aidooit-app.herokuapp.com/singup'>
-            https://aidooit-app.herokuapp.com/singup</a></h4></td>
+            <td><h4><a href='https://aidooit-app.herokuapp.com/user/singup'>
+            https://aidooit-app.herokuapp.com/user/singup</a></h4></td>
         </tr>
         <tr>
             <td><h4>Get Login User -></h4></td>
             <td><h4>GET -></h4></td>
-            <td><h4><a href='https://aidooit-app.herokuapp.com/me'>
-            https://aidooit-app.herokuapp.com/me</a></h4></td>
+            <td><h4><a href='https://aidooit-app.herokuapp.com/user/me'>
+            https://aidooit-app.herokuapp.com/user/me</a></h4></td>
         </tr>
         <tr>
             <td><h4>Get all posts -></h4></td>

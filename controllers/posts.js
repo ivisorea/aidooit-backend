@@ -71,7 +71,7 @@ export const deletePost = asyncHandler(async(req, res) => {
 export const getPostsByCategory = asyncHandler(async(req, res) => {
     console.log('aaa');
     const {
-        params: { id}
+        params: { id }
     } = req;
     const posts = await Post.find({category: id}).populate('category', 'name');
     if (!posts) throw new ErrorResponse(`Posts with category id of ${id} not found`, 404);
