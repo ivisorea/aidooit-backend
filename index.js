@@ -38,8 +38,8 @@ app.use('*', (req, res) => {res.send (
         </tr>
             <td><h4>Get Posts by Author -></h4></td>  
             <td><h4>GET -></h4></td>
-            <td><h4><a href='https://aidooit-app.herokuapp.com/author/:id'>
-            https://aidooit-app.herokuapp.com/author/:id</a></h4></td>
+            <td><h4><a href='https://aidooit-app.herokuapp.com/post/author/:id'>
+            https://aidooit-app.herokuapp.com/post/author/:id</a></h4></td>
         </tr>
         <tr>
             <td><h4>SingIn User -></h4></td>
