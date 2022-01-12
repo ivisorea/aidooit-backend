@@ -82,9 +82,9 @@ export const getPostsByCategory = asyncHandler(async(req, res) => {
 //Get Posts by Author
 export const getPostsByAuthor = asyncHandler(async(req, res) => {
     const {
-        params: { author }
+        params: { id }
     } = req;
-    const posts = await Post.find({author: author}).populate('category', 'name');
+    const posts = await Post.find({author: id}).populate('category', 'name');
     if (!posts) throw new ErrorResponse(`Posts with author id of ${author} not found`, 404);
     res.json(posts);
 }
