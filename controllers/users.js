@@ -9,7 +9,7 @@ export const getAllUsers = asyncHandler(async (req, res, next) => {
     res.json(users);
 });
 
-export const singUp = asyncHandler(async (req, res, next) => {
+export const signUp = asyncHandler(async (req, res, next) => {
     const {
         body: { first_name, last_name, email, password }
       } = req;
@@ -23,7 +23,7 @@ export const singUp = asyncHandler(async (req, res, next) => {
       res.json({ token });
 });
 
-export const singIn = asyncHandler(async (req, res, next) => {
+export const signIn = asyncHandler(async (req, res, next) => {
     const {
         body: { email, password }
       } = req;
