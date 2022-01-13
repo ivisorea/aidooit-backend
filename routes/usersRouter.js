@@ -5,8 +5,8 @@ import verifyToken from "../middleware/verifyToken.js";
 
 const usersRouter = Router();
 
-usersRouter.post('/singup', signUp);
-usersRouter.post('/singin', signIn);
+usersRouter.post('/signup', signUp);
+usersRouter.post('/signin', signIn);
 usersRouter.get('/me',verifyToken, getMe);
 usersRouter.get('/', getAllUsers);
 
