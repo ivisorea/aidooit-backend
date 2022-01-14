@@ -12,6 +12,9 @@ export const getAllPosts = asyncHandler(async (req, res, next) => {
 export const createPost = asyncHandler(async (req, res) => {
     const {
         body,
+        title,
+        image,
+        category,
         user: { _id }
         
     } = req;
