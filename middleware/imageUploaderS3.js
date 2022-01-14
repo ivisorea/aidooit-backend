@@ -1,8 +1,17 @@
-import s3 from '../s3/s3.js';
 import 'dotenv/config.js';
-const bucketName = process.env.AWS_BUCKET_NAME;
 import multerS3 from 'multer-s3';
 import multer from 'multer';
+import aws from 'aws-sdk/global.js';
+import S3 from 'aws-sdk/clients/s3.js';
+
+const bucketName = process.env.AWS_BUCKET_NAME;
+
+aws.config.update({
+  accessKeyId: process.env.AWS_ACCESS_KEY,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: process.env.AWS_BUCKET_REGION
+});
+const s3 = new S3();
 
 //Upload file to s3
 export const upload = multer({

@@ -1,7 +1,5 @@
 import ErrorResponse from "../utils/ErrorResponse.js";
 import 'dotenv/config.js';
-const bucketName = process.env.AWS_BUCKET_NAME;
-import s3 from '../s3/s3.js';
 
 export const uploadsResponse = (req, res) => {
     const { file } = req;
@@ -20,18 +18,3 @@ export const uploadsResponseS3 = (req, res, next) => {
 };
 
 
-export const getImageS3 = (req, res, next) => {
-    const {Key} = req.params
-    console.log(Key)
-    try {
-        const url = s3.getSignedUrl('getObject', {
-          Bucket: bucketName, 
-          Key: Key,
-          Expires: 60 * 1,
-        })
-        console.log(url)
-    } catch (err) {
-      console.log(err)
-    }
-   
-};
