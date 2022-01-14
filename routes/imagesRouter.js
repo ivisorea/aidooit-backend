@@ -8,6 +8,6 @@ import { uploadsResponseS3 } from "../controllers/images.js";
 const imagesRouter = Router();
 
 imagesRouter.post("/", verifyToken, imageUploader.single('file'), uploadsResponse);
-imagesRouter.post("/s3",verifyToken, upload.array('file'), uploadsResponseS3);
+imagesRouter.post("/s3",verifyToken, upload.single('file'), uploadsResponseS3);
 
 export default imagesRouter;
