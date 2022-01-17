@@ -41,3 +41,17 @@ export const getMe = asyncHandler(async (req, res) => {
   res.json(req.user);
     });
 
+    export const updateUser = asyncHandler(async(req, res) => {
+      const {
+          user,
+          params: { id },
+          body: { first_name, last_name, user_image, street, city, zip_code, country, phone_number, house_number }
+      } = req;
+      const userToUpdate = await User.findById(id);
+      if (user.id !== userToUpdate._id.toString()) 
+          throw new ErrorResponse(`User ${user.first_name} is not authorized to update this user`, 403);
+      const updatedUser = await User.findByIdAndUpdate({_id: id}, {first_name, last_name, user_image, street, city, zip_code, country, phone_number, house_number}, {
+          new: true
+      });
+      res.json(updatedUser);
+  });
