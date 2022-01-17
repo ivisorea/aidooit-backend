@@ -15,6 +15,7 @@ export const createPost = asyncHandler(async (req, res) => {
         title,
         image,
         category,
+        materials_url,
         user: { _id }
         
     } = req;
