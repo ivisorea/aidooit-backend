@@ -31,7 +31,7 @@ export const getSinglePost = asyncHandler(async(req, res) => {
     const {
         params: { id }
     } = req;
-    const post = await Post.findById(id).populate('author');
+    const post = await Post.findById(id).populate('author').populate('materials_url');
     if (!post) throw new ErrorResponse(`Post with id of ${id} not found`, 404);
     res.json(post);
 });
